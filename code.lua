@@ -3,7 +3,7 @@
 
 local data = game:GetService("DataStoreService")
 local json = game:GetService("HttpService")
-local jddata = data:GetDataStore("JdXomStuff_2")
+local jddata = data:GetDataStore("JdXomNomStuff")
 
 -- so you know the parent
 script.Parent = workspace
@@ -20,8 +20,6 @@ local sound = Instance.new("Sound", owner.Character.Head)
 sound.SoundId = "rbxassetid://9119119619"
 local parts = {}
 local tbl = {}
-
-warn("If you get errors about 'attempt to index nil with size', you hit the part limit! Yay! Just wait a bit.")
 
 local soundsave = tag.."SavedSounds"
 
