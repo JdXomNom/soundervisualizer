@@ -21,6 +21,8 @@ sound.SoundId = "rbxassetid://9119119619"
 local parts = {}
 local tbl = {}
 
+warn("If you get errors about 'attempt to index nil with size', you hit the part limit! Yay! Just wait a bit.")
+
 local soundsave = tag.."SavedSounds"
 
 
