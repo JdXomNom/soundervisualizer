@@ -14,7 +14,12 @@ val.Value = script
 
 local tag = owner.UserId
 script.Name = 'deez'
-local event = Instance.new("RemoteEvent", owner)
+local event
+if owner:FindFirstChild('event') then
+	event = owner.event
+else
+	event = Instance.new("RemoteEvent", owner)
+end
 event.Name = 'event'
 local sound = Instance.new("Sound", owner.Character.Head)
 sound.SoundId = "rbxassetid://9119119619"
@@ -30,7 +35,6 @@ function refreshids()
 		return jddata:GetAsync(soundsave)
 	end)
 	ids = (work and err or {})
-	print(ids)
 	if not work or ids == nil then
 		warn("ERROR LOADING ID(S): "..tostring(err))
 		ids = {}
@@ -98,7 +102,7 @@ local g = 10;
 local b = 0;
 
 event.OnServerEvent:Connect(function(p, l)
-	tbl[1] = math.clamp(l / 10, 0, 60)
+	tbl[1] = math.clamp(l / 10, 0, 100)
 	for i=len,2,-1 do
 		tbl[i] = tbl[i - 1]
 	end
